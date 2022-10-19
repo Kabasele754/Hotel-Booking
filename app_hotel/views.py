@@ -134,7 +134,7 @@ class RoomView(DetailView):
                         pass
                     else:
                         messages.warning(request,"Sorry This Room is unavailable for Booking")
-                        return redirect("homepage")
+                        return redirect("/")
                 current_user = request.user
                 total_person = int( request.POST['number_guest'])
                 booking_id = str(room_id) + str(datetime.datetime.now())
