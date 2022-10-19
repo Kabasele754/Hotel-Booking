@@ -19,6 +19,7 @@ class UserCreate(CreateView):
     template_name = 'hotel/creation_user.html'
     form_class = UserCreationForm
     #success_url = reverse_lazy(liste)
+    success_url = '/'
 
 
 class HomePageView(TemplateView):
