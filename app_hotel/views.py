@@ -3,14 +3,22 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse 
 from django.views.generic import TemplateView, DetailView,View, CreateView
 from .models import Blog, Contact, Room, Comment,Reservation, User
-from .form import CommentForm, ContactForm
+from .form import CommentForm, ContactForm, UserCreationForm
 from django.shortcuts import get_object_or_404
 from django.utils.text import slugify
 from django.urls import reverse_lazy
 from django.contrib import messages
 import datetime
+#from django.core.urlresolvers import reverse_lazy
 
 # Create your views here.
+
+
+class UserCreate(CreateView):
+    model = User
+    template_name = 'hotel/creation_user.html'
+    form_class = UserCreationForm
+    #success_url = reverse_lazy(liste)
 
 
 class HomePageView(TemplateView):
